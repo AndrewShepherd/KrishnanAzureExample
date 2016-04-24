@@ -7,4 +7,5 @@ It appears that changes in the Azure SDK have gotten his example to fail
 To run this
 
 > cspack ServiceDefinition.csdef /role:WebRole1;htmlwebsite /out:output /copyonly
+>
 > csrun /run:output;ServiceConfiguration.cscfg
