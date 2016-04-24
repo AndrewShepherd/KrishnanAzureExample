@@ -1,29 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ServiceDefinition name="CloudService1" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" >
 
-
   <WebRole name="WebRole1" enableNativeCodeExecution="false">
   	<InputEndpoints>
 	  <InputEndpoint name="HttpIn" protocol="http" port="80" />
 	</InputEndpoints>
+	<ConfigurationSettings />
 	<Sites>
-		<Site name="TokenSite" physicalDirectory="C:\Users\Andrew\Documents\Development Practice\Krishnan\Target">
-			<!--
+		<Site name="TokenSite" physicalDirectory="htmlwebsite">
+			<Bindings>
+				<Binding name="BindingOne" endpointName="HttpIn" />
+			</Bindings>		
+		</Site>
+	</Sites>
+  </WebRole>
+
+</ServiceDefinition>
+
+
+<!--
 			<VirtualDirectory name="FooBarDirectory" physicalDirectory="C:\Users\Andrew\Documents\Development Practice\Krishnan\Package" />
 			-->
 			<!--
 			<VirtualApplication name="FooBarApplication" physicalDirectory="C:\Users\Andrew\Documents\Development Practice\Krishnan\Package" />
 			-->
-			
-			
-			<Bindings>
-				<Binding name="BindingOne" endpointName="HttpIn" />
-			</Bindings>
-			
-			
-		</Site>
-	</Sites>
-	<ConfigurationSettings />
-  </WebRole>
-
-</ServiceDefinition>
